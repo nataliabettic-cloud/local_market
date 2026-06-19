@@ -30,19 +30,32 @@ document.addEventListener("DOMContentLoaded", function (){
                 const card = document.createElement("div")
                 card.innerHTML =`
                 <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="${produto.imagem}" class="card-img-top" alt="${produto.desc}">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">${produto.desc}</h5>
+                        <p class="card-text">${produto.valor}</p>
+                        <a href="#" class="btn btn-primary adicionar" data-indice="${index}">
+                        Adicionar ao carrinho</a>
                     </div>
                 </div>
                 `
                 produtosContainer.appendChild(card)
-                
+            
 
                 }) 
-            })
+            }).catch((error) => console.log("Erro ao carregar dados", error))
         }
     )
+    document.getElementById("produtos-container").addEventListener("click", function(event){
+        const btn = event.target.closest(".adicionar")
+        if(!btn) return
+
+        const indexDoproduto = btn.dataset.indice
+        const produtoSelecionad0 = produtos[indexDoproduto]
+
+        let carrinho = JSON.parse(localStorage.getItem("carrinho") )|| []
+        carrinho.push(produtoSelecionad0)
+        localStorage.setItem("carrinho", JSON.stringify(carrinho))
+        alert("produto adicionado com sucesso!!!")
+    })
 
