@@ -1,20 +1,24 @@
 [
     {
-        "id": 1,
-        "desc": "Iphone 16 azul",
-        "imagem": "../../public/16azul.jpg",
+        "id":1,
+        "desc": "Iphone 16-rosa",
+        "imagem": "../public/16rosa.jpg",
         "valor": 7500
     },
-      {
-        "id": 2,
-        "desc": "iphone 16 rosa",
-        "imagem": "../../public/16rosa.jpg",
-        "valor": 7800
-    },
-      {
-        "id": 3,
-        "desc": "iphone 16 preto",
-        "imagem": "../../public/16preto.jpg",
+    {
+    
+        "id":1,
+        "desc": "Iphone 16-preto",
+        "imagem": "../public/16preto.jpg",
         "valor": 7600
+    },
+    {
+        
+        "id":1,
+        "desc": "Iphone 16-azul",
+        "imagem": "../public/16azul.jpg",
+        "valor": 7500
+
     }
+    
 ]
